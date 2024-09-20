@@ -83,3 +83,24 @@ class DocumentFile:
             files = [files]
 
         return [read_img_as_numpy(file, **kwargs) for file in files]
+    @classmethod
+    def from_image_array(cls,image: np.array , **kwargs) -> List[np.ndarray] | None:
+        """
+            Read an image array.
+
+            >>> from doctr.io import DocumentFile
+            >>> pages = DocumentFile.from_image_array(test_img)
+            Where test_img is a numpy.ndarray representing an image
+
+            Args:
+        ----
+            image: image array
+            **kwargs: additional parameters to :meth:`doctr.io.image.read_img_as_numpy`
+
+        Returns:
+        -------
+            the list of pages decoded as numpy ndarray of shape H x W x 3
+            This method aims to return output of OCR prediction for the image
+            
+        """
+        return None
